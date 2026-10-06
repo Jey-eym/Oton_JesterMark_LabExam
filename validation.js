@@ -12,7 +12,6 @@ const Validators = (() => {
     "qwertyuiop", "iloveyou", "admin123", "welcome1", "letmein123", "abc12345", "p@ssw0rd",
   ];
 
-  /* Remove control characters and invisible junk; collapse nothing else. */
   const clean = (v) => String(v ?? "").replace(/[\u0000-\u001F\u007F\u200B-\u200D\uFEFF]/g, "");
 
   const fullName = (raw) => {
@@ -48,7 +47,7 @@ const Validators = (() => {
     return "";
   };
 
-  /* Login field: accepts an email OR a username. */
+
   const identifier = (raw) => {
     const v = clean(raw).trim();
     if (!v) return "Email or username is required.";
